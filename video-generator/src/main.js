@@ -7,7 +7,7 @@ const videoSequence = require('./video-sequence.json');
 ffmpeg.setFfmpegPath(ffmpegPath);
 
 const outputVideo = path.join(__dirname, '..', 'preview-video.mp4');
-const audioInput = path.join(__dirname, 'assets', 'audio.aiff');
+const audioInput = path.join(__dirname, 'assets', 'audio.wav');
 const tempDir = path.join(__dirname, 'temp');
 
 if (!fs.existsSync(tempDir)) {
