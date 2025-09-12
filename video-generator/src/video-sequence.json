@@ -1,0 +1,24 @@
+{
+  "scenes": [
+    {
+      "image": "assets/screenshots/01-first-chart.png",
+      "duration": 17.82
+    },
+    {
+      "image": "assets/code-images/01-FirstChart.png",
+      "duration": 26.73
+    },
+    {
+      "image": "assets/screenshots/02-basic-configuration.png",
+      "duration": 17.82
+    },
+    {
+      "image": "assets/code-images/02-BasicConfiguration.png",
+      "duration": 35.63
+    },
+    {
+      "image": "assets/code-images/03-App.png",
+      "duration": 26.73
+    }
+  ]
+}
