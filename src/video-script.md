@@ -2,7 +2,7 @@
 
 Hello, and welcome!
 
-In this video, we'll show you how to get started with the official Highcharts React wrapper. This video is for React developers who want to add powerful, interactive charts to their applications. By the end of this video, you'll have your first Highcharts chart running in a React app.
+In this video, we'll show you how to get started with the official Highcharts for React. This video is for React developers who want to add powerful, interactive charts to their applications. By the end of this video, you'll have your first Highcharts chart running in a React app.
 
 ## Installation
 
@@ -13,7 +13,7 @@ First, let's create a new React application using Vite. Open your terminal and r
 
 Once your app is created, navigate into the new directory.
 
-Next, we need to install two packages: `highcharts` and the official React wrapper, `@highcharts/react`. In your terminal, run:
+Next, we need to install two packages: `highcharts` and the official React integration, `@highcharts/react`. In your terminal, run:
 `npm install highcharts @highcharts/react`
 
 After the installation is complete, you can see the new dependencies in your `package.json` file.
@@ -34,7 +34,7 @@ And there you have it! A simple line chart rendered in your React application.
 
 ## Basic Configuration
 
-The Highcharts React wrapper is designed to be compositional. You build your chart by combining different components.
+The Highcharts for React is designed to be compositional. You build your chart by combining different components.
 
 Let's go back to our `MyChart` component. You can easily change the chart's title by just changing the text inside the `Title` component.
 
@@ -44,7 +44,7 @@ You can also pass configuration options to the `Chart` component itself to apply
 
 ## Outro
 
-And that's it! You've installed the Highcharts React wrapper and created your first chart.
+And that's it! You've installed the Highcharts for React and created your first chart.
 
 To learn more, check out the official documentation at highcharts.com.
 

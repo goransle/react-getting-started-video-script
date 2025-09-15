@@ -1,6 +1,6 @@
 # Highcharts React Video Script
 
-This project contains the script and assets for a "Getting Started" video for the Highcharts React wrapper.
+This project contains the script and assets for a "Getting Started" video for Highcharts for React.
 
 ## Generating the Preview Video
 
