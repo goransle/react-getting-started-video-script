@@ -1,24 +1,9 @@
 const { chromium } = require('playwright');
 const path = require('path');
 const fs = require('fs').promises;
+const { parseScript } = require('./parse-script');
 
 const codeImagesDir = path.join(__dirname, 'assets', 'code-images');
-const videoExamplesDir = path.resolve(__dirname, '../../video-examples/src');
-
-const filesToCapture = [
-  {
-    filePath: path.join(videoExamplesDir, 'components', '01-FirstChart.tsx'),
-    output: '01-FirstChart.png',
-  },
-  {
-    filePath: path.join(videoExamplesDir, 'components', '02-BasicConfiguration.tsx'),
-    output: '02-BasicConfiguration.png',
-  },
-  {
-    filePath: path.join(videoExamplesDir, 'App.tsx'),
-    output: '03-App.png',
-  }
-];
 
 const createHtml = (code) => `
   <html>
@@ -48,25 +33,41 @@ const createHtml = (code) => `
   const browser = await chromium.launch();
   const page = await browser.newPage();
 
-  for (const file of filesToCapture) {
-    try {
-      console.log(`Reading file: ${file.filePath}`);
-      const code = await fs.readFile(file.filePath, 'utf-8');
+  const segments = parseScript();
+  const videoSequence = [];
 
-      console.log(`Generating image for: ${file.output}`);
-      const html = createHtml(code);
-      await page.setContent(html);
+  for (const segment of segments) {
+    const scene = {
+      narration: segment.narration,
+      visuals: []
+    };
+    for (const snippet of segment.codeSnippets) {
+      try {
+        console.log(`Generating image for: ${snippet.filename}`);
+        const html = createHtml(snippet.code);
+        await page.setContent(html);
 
-      const codeElement = await page.$('pre');
-      const outputPath = path.join(codeImagesDir, file.output);
-      await codeElement.screenshot({ path: outputPath });
+        const codeElement = await page.$('pre');
+        const outputPath = path.join(codeImagesDir, snippet.filename);
+        await codeElement.screenshot({ path: outputPath });
 
-      console.log(`Successfully saved: ${outputPath}`);
+        scene.visuals.push({
+          type: 'code',
+          filename: snippet.filename
+        });
 
-    } catch (error) {
-      console.error(`Failed to generate image for ${file.filePath}:`, error);
+        console.log(`Successfully saved: ${outputPath}`);
+
+      } catch (error) {
+        console.error(`Failed to generate image for ${snippet.filename}:`, error);
+      }
     }
+    videoSequence.push(scene);
   }
+
+  const sequencePath = path.join(__dirname, 'video-sequence.json');
+  await fs.writeFile(sequencePath, JSON.stringify(videoSequence, null, 2));
+  console.log(`Video sequence saved to ${sequencePath}`);
 
   await browser.close();
   console.log('Code images generated successfully.');

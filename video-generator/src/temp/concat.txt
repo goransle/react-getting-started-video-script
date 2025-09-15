@@ -1,0 +1,12 @@
+file '/Users/goranslettemark/hs/react-getting-started-video-script/video-generator/src/assets/code-images/segment-0-0.png'
+duration 45.973243997699825
+file '/Users/goranslettemark/hs/react-getting-started-video-script/video-generator/src/assets/code-images/segment-1-0.png'
+duration 17.676846741805637
+file '/Users/goranslettemark/hs/react-getting-started-video-script/video-generator/src/assets/code-images/segment-2-0.png'
+duration 3.898316011500862
+file '/Users/goranslettemark/hs/react-getting-started-video-script/video-generator/src/assets/code-images/segment-3-0.png'
+duration 34.61435768832663
+file '/Users/goranslettemark/hs/react-getting-started-video-script/video-generator/src/assets/blank.png'
+duration 14.71950356066705
+file '/Users/goranslettemark/hs/react-getting-started-video-script/video-generator/src/assets/blank.png'
+duration 14.71950356066705

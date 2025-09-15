@@ -12,6 +12,7 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@ffprobe-installer/ffprobe": "^2.1.2",
     "say": "^0.16.0"
   },
   "devDependencies": {

@@ -1,8 +1,7 @@
-const fs = require('fs');
-const path = require('path');
+const { parseScript } = require('../video-generator/src/parse-script');
 const { generateAudio } = require('../video-generator/src/tts-service');
+const path = require('path');
 
-const scriptPath = path.join(__dirname, 'video-script.md');
 const outputPath = path.join(__dirname, '..', 'video-generator', 'src', 'assets', 'audio.wav');
 
 // --- Configuration ---
@@ -19,13 +18,9 @@ const noiseWScale = 0.8;   // Phoneme width noise (variability).
 const sentenceSilence = 0.2; // Seconds of silence between sentences.
 // -------------------------
 
-fs.readFile(scriptPath, 'utf8', async (err, data) => {
-    if (err) {
-        console.error("Error reading the script file:", err);
-        return;
-    }
-
-    const text = data.replace(/## .*/g, '').replace(/`[^`]+`/g, '').replace(/\n/g, ' ');
+async function main() {
+    const segments = parseScript();
+    const text = segments.map(segment => segment.narration).join(' ');
 
     try {
         console.log('Generating audio with uvx and Piper... This may take a moment.');
@@ -42,4 +37,6 @@ fs.readFile(scriptPath, 'utf8', async (err, data) => {
     } catch (error) {
         console.error('Error generating audio:', error);
     }
-});
+}
+
+main();

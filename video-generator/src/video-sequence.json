@@ -1,24 +1,42 @@
-{
-  "scenes": [
-    {
-      "image": "assets/screenshots/01-first-chart.png",
-      "duration": 17.82
-    },
-    {
-      "image": "assets/code-images/01-FirstChart.png",
-      "duration": 26.73
-    },
-    {
-      "image": "assets/screenshots/02-basic-configuration.png",
-      "duration": 17.82
-    },
-    {
-      "image": "assets/code-images/02-BasicConfiguration.png",
-      "duration": 35.63
-    },
-    {
-      "image": "assets/code-images/03-App.png",
-      "duration": 26.73
-    }
-  ]
-}
+[
+  {
+    "narration": "Hello, and welcome!\n\nIn this video, we'll show you how to get started with Highcharts for React. This video is for React developers who want to add powerful, interactive charts to their applications. By the end of this video, you'll have your first Highcharts chart running in a React app.\n\nBefore we start, make sure you have React 18.3.1 or newer and Highcharts 11.4.8 or newer.\n\nFirst, let's create a new React application using Vite. Open your terminal and run:\n`npm create vite@latest my-chart-app -- --template react`\n\nOnce your app is created, navigate into the new directory.\n\nNext, we need to install two packages: `highcharts` and `@highcharts/react`. In your terminal, run:",
+    "visuals": [
+      {
+        "type": "code",
+        "filename": "segment-0-0.png"
+      }
+    ]
+  },
+  {
+    "narration": "After the installation is complete, you can see the new dependencies in your `package.json` file.\n\nNow for the fun part. Let's create our first chart.\n\nOpen up `src/App.tsx` and clear out the default content.\n\nFirst, we'll import React and the components we need.",
+    "visuals": [
+      {
+        "type": "code",
+        "filename": "segment-1-0.png"
+      }
+    ]
+  },
+  {
+    "narration": "Now, let's create our chart by composing these components.",
+    "visuals": [
+      {
+        "type": "code",
+        "filename": "segment-2-0.png"
+      }
+    ]
+  },
+  {
+    "narration": "And there you have it! A simple line chart rendered in your React application.\n\nThe Highcharts for React integration is designed to be compositional. You build your chart by combining different components.\n\nLet's go back to our `App` component. You can easily change the chart's title by just changing the text inside the `Title` component.\n\nWant to add another series? Just import another series component, like `Area` from `@highcharts/react/series`, and add it to your chart with some new data. It's that simple.",
+    "visuals": [
+      {
+        "type": "code",
+        "filename": "segment-3-0.png"
+      }
+    ]
+  },
+  {
+    "narration": "And that's it! You've installed `@highcharts/react` and created your first chart by composing components.\n\nTo learn more, check out the official documentation at highcharts.com.\n\nThanks for watching, and happy charting!",
+    "visuals": []
+  }
+]
